@@ -3,9 +3,17 @@
 
 /* 기능에 대한 함수 호출 */
 void recordPayment();
-void unpaidStudent();
+void tuition_unpaidStudent();
 void student_Information_Management();
 void academy_Information_Management();
+
+
+/* 배열 선언 */
+char name[100];
+int grade;
+char school[100];
+char number[100];
+float paymentAmount;
 
 
 int main() {
@@ -13,16 +21,57 @@ int main() {
 
 	do {
 		/* 사용자 디스플레이 */
-		printf("\n □□□□□ 학원비 관리 시스템 □□□□□");
-		printf("\t (1) 학원비 납부 ");
-		printf("\t (2) 미납 학생 관리 ");
-		printf("\t (3) 학생 정보 관리 ");
-		printf("\t (4) 학원 정보 관리 ");
-		printf("\t (5) 종료 ");
-		printf("\t □□□□□□□□□□□□□□□□□□□□");
-		printf("실행하고자 하는 기능번호를 입력하세요 :");
+		printf("\n □□□□□□□ 학원비 관리 시스템 □□□□□□□\n\n");
+		printf("\t (1) 학원비 납부 \n");
+		printf("\t (2) 미납 학생 관리 \n");
+		printf("\t (3) 학생 정보 관리 \n");
+		printf("\t (4) 학원 정보 관리 \n");
+		printf("\t (5) 프로그램 종료 \n\n");
+		printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□\n");
+		printf("실행하고자 하는 기능의 번호를 입력하세요 :");
 		scanf_s("%d", &choice);
 
+		/* 기능 선택 */
+		switch (choice) {
+		case 1:
+			recordPayment();
+			break;
+		case 2:
+			tuition_unpaidStudent();
+			break;
+		case 3:
+			student_Information_Management();
+			break;
+		case 4:
+			academy_Information_Management();
+			break;
+		case 5:
+			printf(" 프로그램을 종료합니다. \n");
+			break;
+		default:
+			printf("1~5까지의 숫자를 입력해주세요 :) ");
+		}
 		
-	}
+	} while (choice != 5);
+	
+	return 0;
+}
+
+
+/* 기능별 함수 선언 */
+
+void recordPayment() {
+
+}
+
+void tuition_unpaidStudent() {
+
+}
+
+void student_Information_Management() {
+
+}
+
+void academy_Information_Management() {
+
 }
