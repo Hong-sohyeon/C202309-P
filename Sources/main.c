@@ -77,6 +77,8 @@ void student_Information_Management() {
 	
 	printf("(1) 학생 정보 등록\n");
 	printf("(2) 학생 정보 수정\n");
+	printf("(3) 학생 정보 조회\n");
+
 	printf(" 원하는 기능을 선택하세요 \n");
 
 	scanf_s("%d", &choice);
@@ -125,7 +127,33 @@ void student_Information_Management() {
 				printf("일치하는 학생이 없습니다. 다시 입력해주세요.");
 				continue;
 			}
+
 		}
+		break;
+
+	/* 학생 정보 조회 */
+	case 3:
+		char searchStudent[MAX_namelength];
+		printf("조회할 학생의 이름을 입력하세요: ");
+		scanf_s("%s", searchStudent, sizeof(searchStudent));
+
+		/*일치하는 학생 찾기*/
+		for (int i = 0; i < NUM_students; ++i) {
+			if (strcmp(student_Infor[i][0], searchStudent) == 0) {
+				printf("[[[[학생정보]]]]\n");
+				printf("이름: %s\n", student_Infor[i][0]);
+				printf("학년: %s\n", student_Infor[i][1]);
+				printf("학교: %s\n", student_Infor[i][2]);
+				printf("연락처: %s\n", student_Infor[i][3]);
+				printf("납부 금액: %s\n", student_Infor[i][4]);
+
+				break;
+			}
+		}
+		break;
+
+	default:
+		printf("1~3 사이의 숫자를 입력해주세요. \n");
 	}
 
 }
