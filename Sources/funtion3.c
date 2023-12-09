@@ -1,12 +1,14 @@
-#include <stdio.h>
-#include "function3.h"
+#ifndef function3_h	
+#define function3_h
 
+#include <stdio.h>
+
+#include "common.h"
 
 void student_Information_Management() {
 	int choice;
 	char modifying_Infor[MAX_namelength];
 	char searchStudent[MAX_namelength];
-
 
 	printf(" 학생 정보를 등록/수정 합니다.\n");
 
@@ -22,46 +24,69 @@ void student_Information_Management() {
 		/* 학생 정보 등록 */
 	case 1:
 		printf(" 새로운 학생 정보를 입력하세요 \n");
-		printf(" 학생 이름: ");
-		scanf_s("%s", student_Infor[NUM_students][0], sizeof(student_Infor[NUM_students][0]));
-		printf(" 학생 학년: ");
-		scanf_s("%s", student_Infor[NUM_students][1], sizeof(student_Infor[NUM_students][1]));
-		printf(" 학생 학교: ");
-		scanf_s("%s", student_Infor[NUM_students][2], sizeof(student_Infor[NUM_students][2]));
-		printf(" 학생 연락처: ");
-		scanf_s("%s", student_Infor[NUM_students][3], sizeof(student_Infor[NUM_students][3]));
-		printf(" 납부 금액: ");
-		scanf_s("%s", student_Infor[NUM_students][4], sizeof(student_Infor[NUM_students][4]));
+
+		// 학생 이름 입력
+		printf("학생 이름: ");
+		scanf_s("%s", student_Infor[NUM_students][0], MAX_namelength);
+
+		// 학생 학년 입력
+		printf("학생 학년: ");
+		scanf_s("%s", student_Infor[NUM_students][1], MAX_namelength);
+
+		// 학생 학교 입력
+		printf("학생 학교: ");
+		scanf_s("%s", student_Infor[NUM_students][2], MAX_namelength);
+
+		// 학생 연락처 입력
+		printf("학생 연락처: ");
+		scanf_s("%s", student_Infor[NUM_students][3], MAX_namelength);
+
+		// 납부 금액 입력
+		printf("납부 금액: ");
+		scanf_s("%s", student_Infor[NUM_students][4], MAX_namelength);
+
 
 		NUM_students++;
-
+		printf("학생 정보가 등록되었습니다. 현재 학생 수 : %d \n", NUM_students);
 		break;
 		/* 학생 정보 수정 */
 	case 2:
 		printf(" 수정할 학생의 이름을 입력하세요: ");
 		scanf_s("%s", modifying_Infor, sizeof(modifying_Infor));
 
+		int studentFound = 0;
+
 		for (int i = 0; i < NUM_students; ++i) {
 			if (strcmp(student_Infor[i][0], modifying_Infor) == 0) {
-				printf(" 학생 이름: ");
-				scanf_s("%s", student_Infor[NUM_students][0], sizeof(student_Infor[NUM_students][0]));
-				printf(" 학생 학년: ");
-				scanf_s("%s", student_Infor[NUM_students][1], sizeof(student_Infor[NUM_students][1]));
-				printf(" 학생 학교: ");
-				scanf_s("%s", student_Infor[NUM_students][2], sizeof(student_Infor[NUM_students][2]));
-				printf(" 학생 연락처: ");
-				scanf_s("%s", student_Infor[NUM_students][3], sizeof(student_Infor[NUM_students][3]));
-				printf(" 납부 금액: ");
-				scanf_s("%s", student_Infor[NUM_students][4], sizeof(student_Infor[NUM_students][4]));
+				// 학생 이름 입력
+				printf("학생 이름: ");
+				scanf_s("%s", student_Infor[NUM_students][0], MAX_namelength);
 
+				// 학생 학년 입력
+				printf("학생 학년: ");
+				scanf_s("%s", student_Infor[NUM_students][1], MAX_namelength);
+
+				// 학생 학교 입력
+				printf("학생 학교: ");
+				scanf_s("%s", student_Infor[NUM_students][2], MAX_namelength);
+
+				// 학생 연락처 입력
+				printf("학생 연락처: ");
+				scanf_s("%s", student_Infor[NUM_students][3], MAX_namelength);
+
+				// 납부 금액 입력
+				printf("납부 금액: ");
+				scanf_s("%s", student_Infor[NUM_students][4], MAX_namelength);
+
+
+				
 				printf("정상적으로 수정되었습니다.");
+				studentFound = 1;
 				break;
 			}
-			else {
-				printf("일치하는 학생이 없습니다. 다시 입력해주세요.");
-				continue;
-			}
-
+		}
+		if (!studentFound) {
+			printf("일치하는 학생이 없습니다. 다시 입력해주세요.\n");
 		}
 		break;
 
@@ -81,6 +106,10 @@ void student_Information_Management() {
 				printf("납부 금액: %s\n", student_Infor[i][4]);
 				break;
 			}
+			else {
+				printf("일치하는 학생이 없습니다. 다시 입력해주세요.");
+				continue;
+			}
 		}
 		break;
 
@@ -89,3 +118,4 @@ void student_Information_Management() {
 	}
 
 }
+#endif

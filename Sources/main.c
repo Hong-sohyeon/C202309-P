@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "common.h"
+#include "function1.h"
 #include "function3.h"
+
 
 /* 기능에 대한 함수 호출 */
 void recordPayment();
@@ -55,10 +59,6 @@ int main() {
 
 
 /* 기능별 함수 선언 */
-
-void recordPayment() {
-
-}
 
 void tuition_unpaidStudent() {
 

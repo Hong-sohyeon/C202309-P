@@ -3,6 +3,7 @@
 
 #include "common.h"
 
-void student_Information_Management();
+/* 학원비 납부 기능 */
+void recordPayment();
 
 #endif
