@@ -5,6 +5,7 @@
 #include "function1.h"
 #include "function2.h"
 #include "function3.h"
+#include "function5.h"
 
 
 /* 기능에 대한 함수 호출 */
@@ -12,6 +13,7 @@ void recordPayment();
 void tuition_unpaidStudent();
 void student_Information_Management();
 void academy_Information_Management();
+void allocateAcademyTuition();
 
 #define MAX_students 100
 #define MAX_namelength 100
@@ -27,7 +29,8 @@ int main() {
 		printf("\t (2) 미납 학생 관리 \n");
 		printf("\t (3) 학생 정보 관리 \n");
 		printf("\t (4) 학원 정보 관리 \n");
-		printf("\t (5) 프로그램 종료 \n\n");
+		printf("\t (5) 학원비 할당(1일) \n");
+		printf("\t (6) 프로그램 종료 \n\n");
 		printf(" □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□\n");
 		printf("실행하고자 하는 기능의 번호를 입력하세요 :");
 		scanf_s("%d", &choice);
@@ -47,13 +50,16 @@ int main() {
 			academy_Information_Management();
 			break;
 		case 5:
+			allocateAcademyTuition();
+			break;
+		case 6:
 			printf(" 프로그램을 종료합니다. \n");
 			break;
 		default:
 			printf("1~5까지의 숫자를 입력해주세요 :) ");
 		}
 		
-	} while (choice != 5);
+	} while (choice != 6);
 	
 	return 0;
 }

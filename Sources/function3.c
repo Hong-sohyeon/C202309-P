@@ -31,32 +31,28 @@ void student_Information_Management() {
 
 		// 학생 이름 입력
 		printf("학생 이름: ");
-		scanf_s("%s", student_Infor[NUM_students][0], MAX_namelength);
+		scanf_s("%s", student_Infor[NUM_students].name, MAX_namelength);
 
 		// 학생 학년 입력
 		printf("학생 학년: ");
-		scanf_s("%s", student_Infor[NUM_students][1], MAX_namelength);
+		scanf_s("%s", student_Infor[NUM_students].grade, MAX_namelength);
 
 		// 학생 학교 입력
 		printf("학생 학교: ");
-		scanf_s("%s", student_Infor[NUM_students][2], MAX_namelength);
+		scanf_s("%s", student_Infor[NUM_students].school, MAX_namelength);
 
 		// 학생 연락처 입력
 		printf("학생 연락처: ");
-		scanf_s("%s", student_Infor[NUM_students][3], MAX_namelength);
+		scanf_s("%s", student_Infor[NUM_students].contact, MAX_namelength);
 
 		// 납부 금액 입력
 		printf("납부 금액: ");
-		scanf_s("%s", student_Infor[NUM_students][4], MAX_namelength);
-
-		// 첫 등원일 입력
-		printf("결제일: ");
-		scanf_s("%s", student_Infor[NUM_students][5], MAX_namelength);
-
+		scanf_s("%f", &student_Infor[NUM_students].paymentAmount);
 
 		NUM_students++;
 		printf("학생 정보가 등록되었습니다. 현재 학생 수 : %d \n", NUM_students);
 		break;
+
 		/* 학생 정보 수정 */
 	case 2:
 		printf(" 수정할 학생의 이름을 입력하세요: ");
@@ -65,33 +61,27 @@ void student_Information_Management() {
 		int studentFound = 0;
 
 		for (int i = 0; i < NUM_students; ++i) {
-			if (strcmp(student_Infor[i][0], modifying_Infor) == 0) {
+			if (strcmp(student_Infor[i].name, modifying_Infor) == 0) {
 				// 학생 이름 입력
 				printf("학생 이름: ");
-				scanf_s("%s", student_Infor[NUM_students][0], MAX_namelength);
+				scanf_s("%s", student_Infor[i].name, MAX_namelength);
 
 				// 학생 학년 입력
 				printf("학생 학년: ");
-				scanf_s("%s", student_Infor[NUM_students][1], MAX_namelength);
+				scanf_s("%s", student_Infor[i].grade, MAX_namelength);
 
 				// 학생 학교 입력
 				printf("학생 학교: ");
-				scanf_s("%s", student_Infor[NUM_students][2], MAX_namelength);
+				scanf_s("%s", student_Infor[i].school, MAX_namelength);
 
 				// 학생 연락처 입력
 				printf("학생 연락처: ");
-				scanf_s("%s", student_Infor[NUM_students][3], MAX_namelength);
+				scanf_s("%s", student_Infor[i].contact, MAX_namelength);
 
 				// 납부 금액 입력
 				printf("납부 금액: ");
-				scanf_s("%s", student_Infor[NUM_students][4], MAX_namelength);
+				scanf_s("%f", &student_Infor[i].paymentAmount);
 
-				// 첫 등원일 입력
-				printf("결제일: ");
-				scanf_s("%s", student_Infor[NUM_students][5], MAX_namelength);
-
-
-				
 				printf("정상적으로 수정되었습니다.");
 				studentFound = 1;
 				break;
@@ -109,13 +99,13 @@ void student_Information_Management() {
 
 		/*일치하는 학생 찾기*/
 		for (int i = 0; i < NUM_students; ++i) {
-			if (strcmp(student_Infor[i][0], searchStudent) == 0) {
+			if (strcmp(student_Infor[i].name, searchStudent) == 0) {
 				printf("[[[[학생정보]]]]\n");
-				printf("이름: %s\n", student_Infor[i][0]);
-				printf("학년: %s\n", student_Infor[i][1]);
-				printf("학교: %s\n", student_Infor[i][2]);
-				printf("연락처: %s\n", student_Infor[i][3]);
-				printf("납부 금액: %s\n", student_Infor[i][4]);
+				printf("이름: %s\n", student_Infor[i].name);
+				printf("학년: %s\n", student_Infor[i].grade);
+				printf("학교: %s\n", student_Infor[i].school);
+				printf("연락처: %s\n", student_Infor[i].contact);
+				printf("납부 금액: %.2f\n", student_Infor[i].paymentAmount);
 				break;
 			}
 			else {
