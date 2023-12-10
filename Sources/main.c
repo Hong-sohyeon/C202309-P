@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "function1.h"
+#include "function2.h"
 #include "function3.h"
 
 
@@ -59,10 +60,6 @@ int main() {
 
 
 /* 기능별 함수 선언 */
-
-void tuition_unpaidStudent() {
-
-}
 
 void academy_Information_Management() {
 
