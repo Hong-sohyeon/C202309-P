@@ -3,17 +3,16 @@
 
 #include <time.h>
 
-#define MAX_students 100
-#define MAX_namelength 100
+#define MAX_students 100       // 최대 학생 수 정의
+#define MAX_namelength 100     // 이름 최대 길이 정의
 
 typedef struct {
-    char name[MAX_namelength];
-    char grade[MAX_namelength];
-    char school[MAX_namelength];
-    char contact[MAX_namelength];
-    float paymentAmount;
-    char paymentDate[MAX_namelength];
-    time_t startDate;
+    char name[MAX_students];
+    char grade[MAX_students];
+    char school[MAX_students];
+    char contact[MAX_students];
+    int paymentAmount;
+    char paymentDate[MAX_students];
 }STUDENT;
 
 /* 배열 선언 */

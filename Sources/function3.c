@@ -6,8 +6,6 @@
 #include "common.h"
 #include "function3.h"
 
-extern time_t startDate;
-
 
 void student_Information_Management() {
 	int choice;
@@ -47,7 +45,7 @@ void student_Information_Management() {
 
 		// 납부 금액 입력
 		printf("납부 금액: ");
-		scanf_s("%f", &student_Infor[NUM_students].paymentAmount);
+		scanf_s("%d", &student_Infor[NUM_students].paymentAmount);
 
 		NUM_students++;
 		printf("학생 정보가 등록되었습니다. 현재 학생 수 : %d \n", NUM_students);
@@ -80,7 +78,7 @@ void student_Information_Management() {
 
 				// 납부 금액 입력
 				printf("납부 금액: ");
-				scanf_s("%f", &student_Infor[i].paymentAmount);
+				scanf_s("%d", &student_Infor[i].paymentAmount);
 
 				printf("정상적으로 수정되었습니다.");
 				studentFound = 1;
@@ -105,7 +103,7 @@ void student_Information_Management() {
 				printf("학년: %s\n", student_Infor[i].grade);
 				printf("학교: %s\n", student_Infor[i].school);
 				printf("연락처: %s\n", student_Infor[i].contact);
-				printf("납부 금액: %.2f\n", student_Infor[i].paymentAmount);
+				printf("납부 금액: %d\n", student_Infor[i].paymentAmount);
 				break;
 			}
 			else {

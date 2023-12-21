@@ -21,9 +21,9 @@ void recordPayment() {
 	/* step2 학생 이름 찾아서 해당 학생의 납부 정보 입력 */
 	for (int i = 0; i < NUM_students; ++i) {
 		if (strcmp(student_Infor[i].name, studentName) == 0) {
-			printf("납부해야 하는 금액 : %.2f \n", student_Infor[i].paymentAmount);
+			printf("납부해야 하는 금액 : %f \n", student_Infor[i].paymentAmount);
 			printf("납부한 금액을 입력하세요 : ");
-			scanf_s("%f", &paidAmount);
+			scanf_s("%d", &paidAmount);
 			printf("납부 일자를 입력하세요(YYYYMMDD): ");
 			scanf_s("%s", paymentDate, sizeof(paymentDate));
 
@@ -31,7 +31,7 @@ void recordPayment() {
 			strcpy_s(student_Infor[i].paymentDate, sizeof(student_Infor[i].paymentDate), paymentDate);
 
 			float currentAmount = student_Infor[i].paymentAmount;
-			currentAmount += paidAmount;
+			currentAmount -= paidAmount;
 			student_Infor[i].paymentAmount = currentAmount;
 			printf("납부가 정상적으로 처리되었습니다. \n");
 

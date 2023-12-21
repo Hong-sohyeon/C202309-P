@@ -15,7 +15,7 @@ void tuition_unpaidStudent() {
     for(int i = 0; i < NUM_students; ++i) {
         if (student_Infor[i].paymentAmount > 0) {
             printf("ÀÌ¸§: %s\t", student_Infor[i].name);
-            printf("¹Ì³³ ±Ý¾×: %.2f \n\n", student_Infor[i].paymentAmount);
+            printf("¹Ì³³ ±Ý¾×: %d \n\n", student_Infor[i].paymentAmount);
             unpaidCount++;
         }
     }
