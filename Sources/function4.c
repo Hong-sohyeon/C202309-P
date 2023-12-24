@@ -49,7 +49,7 @@ void academy_Information_Management() {
     int choice;
     int totalIncome = calculateTotalIncome();
 
-    printf(" 학원 정보를 조회합니다.\n");
+    printf(">>학원 정보를 조회<<\n");
     printf("(1) 학생 재원생 목록 출력\n");
     printf("(2) 학원 월별 수입 계산\n");
     printf("(3) 내역 조회\n");
