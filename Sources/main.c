@@ -5,6 +5,7 @@
 #include "function1.h"
 #include "function2.h"
 #include "function3.h"
+#include "function4.h"
 #include "function5.h"
 
 
@@ -62,11 +63,4 @@ int main() {
 	} while (choice != 6);
 	
 	return 0;
-}
-
-
-/* 기능별 함수 선언 */
-
-void academy_Information_Management() {
-
 }

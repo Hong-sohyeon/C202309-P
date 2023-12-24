@@ -12,7 +12,7 @@ void student_Information_Management() {
 	char modifying_Infor[MAX_namelength];
 	char searchStudent[MAX_namelength];
 
-	printf(" 학생 정보를 등록/수정 합니다.\n");
+	printf(" ");
 
 	printf("(1) 학생 정보 등록\n");
 	printf("(2) 학생 정보 수정\n");
@@ -28,7 +28,7 @@ void student_Information_Management() {
 		printf(" 새로운 학생 정보를 입력하세요 \n");
 
 		// 학생 이름 입력
-		printf("학생 이름: ");
+		printf("학생 이름 : ");
 		scanf_s("%s", student_Infor[NUM_students].name, MAX_namelength);
 
 		// 학생 학년 입력
@@ -46,6 +46,7 @@ void student_Information_Management() {
 		// 납부 금액 입력
 		printf("납부 금액: ");
 		scanf_s("%d", &student_Infor[NUM_students].paymentAmount);
+		student_Infor[NUM_students].currentAmount[NUM_students] = student_Infor[NUM_students].paymentAmount;
 
 		NUM_students++;
 		printf("학생 정보가 등록되었습니다. 현재 학생 수 : %d \n", NUM_students);

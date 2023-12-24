@@ -18,9 +18,7 @@ void allocateAcademyTuition() {
 
     // 모든 학생에게 개인별 학원비 추가
     for (int i = 0; i < NUM_students; ++i) {
-        float currentAmount = student_Infor[i].paymentAmount;
-        currentAmount += student_Infor[i].paymentAmount;
-        student_Infor[i].paymentAmount = currentAmount;
+        student_Infor[i].currentAmount[i] += student_Infor[i].paymentAmount;
     }
 
     if (NUM_students == 0) {

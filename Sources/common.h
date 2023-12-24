@@ -13,11 +13,11 @@ typedef struct {
     char contact[MAX_students];
     int paymentAmount;
     char paymentDate[MAX_students];
+    int currentAmount[MAX_students];
 }STUDENT;
 
 /* 배열 선언 */
 STUDENT student_Infor[MAX_students];  //다차원 배열 사용
 extern int NUM_students;
-extern float academyTuition;
 
 #endif
